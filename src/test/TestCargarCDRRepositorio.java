@@ -9,13 +9,12 @@ import repository.IRepository;
 import repository.JDBRepository;
 
 
-class TestCaragarCDRRepositorio {
+class TestCargarCDRRepositorio {
 
 	@Test
 	public void TestCargarCdrsDesdeRepositorio(){
 		IRepository repositorio = new JDBRepository("TelcoDB.db");
 		ICargarCdrsDesdeRepositorio casoDeUso = new CargarCdrsDesdeRepositorio(repositorio);
-		System.out.print(casoDeUso.getClass());
 		assertEquals("class cargarCdrsDeRepositorio.CargarCdrsDesdeRepositorio", casoDeUso.getClass().toString());
 	}
 	
