@@ -3,9 +3,6 @@ package test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
-
-import cargarCdrsDeRepositorio.CargarCdrsDesdeRepositorio;
-import cargarCdrsDeRepositorio.ICargarCdrsDesdeRepositorio;
 import entidades.CDR;
 import repository.IRepository;
 import repository.JDBRepository;
@@ -13,7 +10,6 @@ import repository.SerializationRepository;
 import guardarCdrsTarificados.GuardarCdrsTarificados;
 import guardarCdrsTarificados.IGuardarCdrsTarificados;
 
-import org.junit.jupiter.api.Test;
 
 class TestGuardarCdrsTarificados {
 
