@@ -19,14 +19,14 @@ class TestJDBRepository {
 	@DisplayName("Se inicializa JDBRepository con el path dado")
 	public void VerificarQueElContructorFunciona(){
 		IRepository JDBRepositorio =new JDBRepository("TelcoDB.db");
-		assertNotNull(JDBRepositorio,()->"No se creo la instancia de la clase JDBRepository");
+		assertNotNull(JDBRepositorio);
 	}
 	
 	@Test
 	@DisplayName("Se cargan 5 CDRs desde JDB")
 	public void VerificarElCargadoDeCDRsDesdeLaDb(){
 		IRepository JDBRepositorio =new JDBRepository("TelcoDB.db");
-		assertEquals(5,JDBRepositorio.obtenerCDRs().size(),()->"No se cargaron los cdr desde la DB" );
+		assertEquals(5,JDBRepositorio.obtenerCDRs().size());
 	}
 	
 	@Test
@@ -37,11 +37,10 @@ class TestJDBRepository {
 	}
 
 	@Test
-	@DisplayName("Se cargan 4 Usuarios desde JDB")
 	public void VerificarElCargadoDeUsuariosDesdeLaDb(){
 		IRepository JDBRepositorio =new JDBRepository("TelcoDB.db");
 		FabricaDePlanesYTarifas fabrica = new FabricaDePlanesYTarifas();
-		assertEquals(4,JDBRepositorio.obtenerUsuarios(fabrica).size(),()->"No se cargo ningun usuario desde la DB");
+		assertEquals(4,JDBRepositorio.obtenerUsuarios(fabrica).size());
 	}
 	
 	@Test

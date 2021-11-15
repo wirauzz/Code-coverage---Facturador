@@ -17,7 +17,7 @@ class TestFabricaDePlanesYTarifas {
 		FabricaDePlanesYTarifas fabrica= new FabricaDePlanesYTarifas();
 		IPlan plan = fabrica.getPlan("PREPAGO");
 		assertNotNull(plan,"No se obtuvo la instancia de Plan Prepago");
-		assertEquals("PREPAGO", plan.getTipoDePlan(),()->"Se obtuvo una instancia de Plan pero no del Plan Prepago");
+		assertEquals("PREPAGO", plan.getTipoDePlan());
 	}
 	
 	@Test
@@ -26,7 +26,7 @@ class TestFabricaDePlanesYTarifas {
 		FabricaDePlanesYTarifas fabrica= new FabricaDePlanesYTarifas();
 		IPlan plan = fabrica.getPlan("POSTPAGO");
 		assertNotNull(plan,"No se obtuvo la instancia de Plan Postpago");
-		assertEquals("POSTPAGO", plan.getTipoDePlan(),()->"Se obtuvo una instancia de Plan pero no del Plan Postpago");
+		assertEquals("POSTPAGO", plan.getTipoDePlan());
 	}
 	
 	@Test
@@ -35,7 +35,7 @@ class TestFabricaDePlanesYTarifas {
 		FabricaDePlanesYTarifas fabrica= new FabricaDePlanesYTarifas();
 		IPlan plan = fabrica.getPlan("WOW");
 		assertNotNull(plan,"No se obtuvo la instancia de Plan Wow");
-		assertEquals("WOW", plan.getTipoDePlan(),()->"Se obtuvo una instancia de Plan pero no del Plan Wow");
+		assertEquals("WOW", plan.getTipoDePlan());
 	}
 	
 	@Test
@@ -52,8 +52,8 @@ class TestFabricaDePlanesYTarifas {
 	public void VerificarElRetornoDeUnaInstanciaDeTarificacionDiferenciadaPorHorario(){
 		FabricaDePlanesYTarifas fabrica= new FabricaDePlanesYTarifas();
 		ITarifacion tarificacion = fabrica.getTarifacion("DIFERENCIADA POR HORARIO");
-		assertNotNull(tarificacion,()->"No se obtuvo la instancia de Tarificacion diferenciada por horario");
-		assertEquals("DIFERENCIADA POR HORARIO", tarificacion.getTipoDeTarifacion(),()->"Se obtuvo una instancia de Tarificacion erronea");
+		assertNotNull(tarificacion);
+		assertEquals("DIFERENCIADA POR HORARIO", tarificacion.getTipoDeTarifacion());
 	}
 	
 	@Test
@@ -61,8 +61,8 @@ class TestFabricaDePlanesYTarifas {
 	public void VerificarElRetornoDeUnaInstanciaDeTarificacionFijaPorMinuto(){
 		FabricaDePlanesYTarifas fabrica= new FabricaDePlanesYTarifas();
 		ITarifacion tarificacion = fabrica.getTarifacion("FIJA POR MINUTO");
-		assertNotNull(tarificacion,()->"No se obtuvo la instancia de Tarificacion fija por minuto");
-		assertEquals("FIJA POR MINUTO",tarificacion.getTipoDeTarifacion(),()->"Se obtuvo una instancia de Tarificacion erronea");
+		assertNotNull(tarificacion);
+		assertEquals("FIJA POR MINUTO",tarificacion.getTipoDeTarifacion());
 	}
 	
 	@Test
