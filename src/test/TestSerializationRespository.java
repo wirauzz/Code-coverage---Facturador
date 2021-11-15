@@ -46,5 +46,8 @@ class TestSerializationRespository {
 		ArrayList<Usuario> Usuarios= serializationRepository.obtenerUsuarios(fabrica);
 		assertEquals(5,Usuarios.size() );
 	}
+	
+	
+	
 
 }
