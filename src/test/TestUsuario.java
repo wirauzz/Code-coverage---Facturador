@@ -16,10 +16,13 @@ class TestUsuario {
 	@DisplayName("Constructor")
 	public void VerificarFuncionamientoDelConstructor() {
 		Usuario usuario= new Usuario("Juan Judas",1324561203,83925956);
-		assertNotNull(usuario,()->"No se instancio el objeto Usuario");
-		assertEquals( "Juan Judas",usuario.getNombre(),()->"Error setear el Nombre de usuario en el contructor");
-		assertEquals(83925956, usuario.getNumeroTelefonoMovil(),()->"Error setear el numero de telefono de Usuario en el contructor");
-		assertEquals(1324561203, usuario.getCi(),()->"Error setear el Ci de Usuario en el contructor");
+		assertAll("Pruebas a pasar",
+		() -> assertNotNull(usuario),
+		() -> assertEquals( "Juan Judas",usuario.getNombre()),
+		() -> assertEquals(83925956, usuario.getNumeroTelefonoMovil()),
+		() ->assertEquals(1324561203, usuario.getCi())	
+		);
+		
 	}
 	
 	
@@ -29,8 +32,11 @@ class TestUsuario {
 		Usuario usuario= new Usuario("Juan Judas",1324561203,83925956);
 		IPlan plan = new PlanPostpago();
 		usuario.setPlan(plan);
-		assertNotNull(usuario.getPlan(),()->"No se seteo el plan de pago");
-		assertEquals("POSTPAGO", usuario.getPlan().getTipoDePlan(),()->"Se obtuvo un plan de pago erroneo");
+		assertAll("Pruebas a pasar",
+		() -> assertNotNull(usuario.getPlan()),
+		() -> assertEquals("POSTPAGO", usuario.getPlan().getTipoDePlan())
+		);
+		
 	}
 	
 	@Test
@@ -39,8 +45,8 @@ class TestUsuario {
 		Usuario usuario= new Usuario("Juan Judas",1324561203,83925956);
 		ITarifacion tarifacion = new TarifacionFijaPorMinuto();
 		usuario.setTarifacion(tarifacion);
-		assertEquals("FIJA POR MINUTO", usuario.getTarifacion().getTipoDeTarifacion(),()->"No se seteo la tarifacion fija por minuto");
-		assertNotNull(usuario.getTarifacion(),()->"No se seteo la tarifacion");
+		assertEquals("FIJA POR MINUTO", usuario.getTarifacion().getTipoDeTarifacion());
+		assertNotNull(usuario.getTarifacion());
 	}
 
 	@Test
@@ -48,7 +54,7 @@ class TestUsuario {
 	public void VerificarSeteoDeNombreDeUsuario() {
 		Usuario usuario= new Usuario("Juan Judas",1324561203,83925956);
 		usuario.setNombre("Marcelo Pedraza");
-		assertEquals("Marcelo Pedraza", usuario.getNombre(),()->"No se seteo el nuevo nombre de usuario");
+		assertEquals("Marcelo Pedraza", usuario.getNombre());
 		
 	}
 	@Test
@@ -56,7 +62,7 @@ class TestUsuario {
 	public void VerificarSeteoDeCiDeUsuario() {
 		Usuario usuario= new Usuario("Juan Judas",1324561203,83925956);
 		usuario.setCi(243567231);
-		assertEquals(243567231, usuario.getCi(),()->"No se seteo el nuevo ci de usuario");
+		assertEquals(243567231, usuario.getCi());
 		
 	}
 	@Test
@@ -64,7 +70,7 @@ class TestUsuario {
 	public void VerificarSeteoDeNumeroDeTelefonoDeUsuario() {
 		Usuario usuario= new Usuario("Juan Judas",1324561203,83925956);
 		usuario.setNumeroTelefonoMovil(243567231);
-		assertEquals(243567231, usuario.getNumeroTelefonoMovil(),()->"No se seteo el nuevo numero de telefono de usuario");
+		assertEquals(243567231, usuario.getNumeroTelefonoMovil());
 		
 	}
 }
