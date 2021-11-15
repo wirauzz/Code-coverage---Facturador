@@ -22,26 +22,6 @@ class TestUsuario {
 		assertEquals(1324561203, usuario.getCi(),()->"Error setear el Ci de Usuario en el contructor");
 	}
 	
-	/*@Test
-	@DisplayName("Obtener nombre")
-	public void ObtnerNombre() {
-		Usuario usuario= new Usuario("Juan Judas",1324561203,83925956);
-		assertEquals( "Juan Judas",usuario.getNombre(),"Error al obtener el Nombre de Usuario");
-	}
-	
-	@Test
-	@DisplayName("Obtener Ci")
-	public void ObtnerCi() {
-		Usuario usuario= new Usuario("Juan Judas",1324561203,83925956);
-		assertEquals(1324561203, usuario.getCi(),"Error al obtener el Ci de Usuario");
-	}
-	
-	@Test
-	@DisplayName("Obtener Numero de telefono")
-	public void ObtnerNumeroDeTelefono() {
-		Usuario usuario= new Usuario("Juan Judas",1324561203,83925956);
-		assertEquals(83925956, usuario.getNumeroTelefonoMovil(),"Error al obtener el Numero de Telefono de Usuario");
-	}*/
 	
 	@Test
 	@DisplayName("Seteo de plan de pago")
