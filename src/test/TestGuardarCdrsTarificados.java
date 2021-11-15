@@ -18,7 +18,7 @@ class TestGuardarCdrsTarificados {
 	
 	@Test
 	public void TestGuardarRegistrosEnRepositorio(){
-		IRepository serializationRepository =new SerializationRepository("cdrs.csv","usuarios.csv");
+		IRepository serializationRepository = new SerializationRepository("cdrs.csv","usuarios.csv");
 		ArrayList<CDR> CDRs = serializationRepository.obtenerCDRs();
 		casoDeUso.guardarRegistrosEnRepositorio(CDRs);
 		assertEquals(5,repositorio.obtenerCDRs().size());
